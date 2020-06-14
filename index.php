@@ -21,8 +21,9 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mysqli_fetch_array();
 //mysqli_fetch_object();
 
-$spt = mysqli_fetch_assoc($result);
-var_dump($spt['harga']);
+$spt = mysqli_fetch_array($result);
+var_dump($spt);
+
 
 
 
