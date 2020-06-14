@@ -12,9 +12,20 @@ $koneksi = mysqli_connect("localhost", "root", "", "sepatu");
 //mengambil data dari tabel data_spt/query data sepatu
 //mysqli_query($koneksi,"SELECT * FROM data_spt");
 //membuat variabel baru untuk mengecek data nya sudah konek atau belum
-$result = mysqli_query($koneksi,"SELECT * FROM data_mhs");
+$result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mengecek dengan var_dump
-var_dump($result);
+//var_dump($result);
+//mengambil data (fetch) sepatu dari object result
+//mysqli_fetch_row();
+//mysqli_fetch_assoc();
+//mysqli_fetch_array();
+//mysqli_fetch_object();
+
+$spt = mysqli_fetch_row($result);
+var_dump($spt)
+
+
+
 
  ?>
  
