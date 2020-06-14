@@ -19,12 +19,12 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mysqli_fetch_row(); mengembalikan array numerik
 //mysqli_fetch_assoc(); mengembalikan array asosiaativ
 //mysqli_fetch_array(); mengembalikan array numerik dan array assosiativ
-//mysqli_fetch_object();
+//mysqli_fetch_object(); mengambalikan sebuah objek
 
-$spt = mysqli_fetch_object($result);
-var_dump($spt->harga);
-
-
+//untuk menampilak semua data yang telah di entry di database menggunakan fungsi while
+while ($spt = mysqli_fetch_assoc($result)){
+var_dump($spt['merk']);
+}
 
 
 
