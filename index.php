@@ -23,7 +23,7 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 
 //untuk menampilak semua data yang telah di entry di database menggunakan fungsi while
 while ($spt = mysqli_fetch_assoc($result)){
-var_dump($spt['merk']);
+var_dump($spt);
 }
 
 
