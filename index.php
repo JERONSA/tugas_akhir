@@ -21,7 +21,7 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mysqli_fetch_array(); mengembalikan array numerik dan array assosiativ
 //mysqli_fetch_object();
 
-$spt = mysqli_fetch_array($result);
+$spt = mysqli_fetch_object($result);
 var_dump($spt["merk"]);
 
 
