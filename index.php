@@ -23,6 +23,9 @@
  	<a href="">ubah</a>
  	<a href="">hapus</a>
  </td>
+ <td>
+ 	<img src="img/sepatu1.jpg">
+ </td>
  </tr>
  	</table>
   </body>
