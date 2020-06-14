@@ -24,7 +24,7 @@
  	<a href="">hapus</a>
  </td>
  <td>
- 	<img src="img/sepatu1.jpg">
+ 	<img src="img/sepatu1.jpg" width="50">
  </td>
  </tr>
  	</table>
