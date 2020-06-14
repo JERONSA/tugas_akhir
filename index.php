@@ -47,7 +47,7 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 	<?php while ($baris = mysqli_fetch_assoc($result)) :?>
 
  <tr>
- 	<td>1</td>
+ 	<td><?=$baris['id'] ?></td>
  	<td>
  	<a href="">ubah</a>
  	<a href="">hapus</a>
