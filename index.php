@@ -53,7 +53,7 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
  	<a href="">hapus</a>
  </td>
  <td>
- 	<img src="img/sepatu1.jpg" width="50">
+ 	<img src="img/<?=$baris['gambar'] ?>" width="50">
  </td>
  <td>Jimmy Choo</td>
  <td>695.000</td>
