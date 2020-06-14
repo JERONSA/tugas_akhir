@@ -6,9 +6,14 @@
 //mysqli_query("localhost", "root", "", "data_spt")
 //cara kedua
 //melakukan koneksi ke database
+//mysqli_connect("localhost", "root", "", "sepatu");
+// membuat variabel untuk memudahkan penjulisan pada pemanggilan queery
 $koneksi = mysqli_connect("localhost", "root", "", "sepatu");
 //mengambil data dari tabel data_spt/query data sepatu
-$result = mysqli_query($koneksi,"SELECT * FROM data_spt");
+//mysqli_query($koneksi,"SELECT * FROM data_spt");
+//membuat variabel baru untuk mengecek data nya sudah konek atau belum
+$result = mysqli_query($koneksi,"SELECT * FROM data_mhs");
+//mengecek dengan var_dump
 var_dump($result);
 
  ?>
