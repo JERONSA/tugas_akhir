@@ -8,7 +8,8 @@
 //melakukan koneksi ke database
 $koneksi = mysqli_connect("localhost", "root", "", "sepatu");
 //mengambil data dari tabel data_spt/query data sepatu
-mysqli_query($koneksi,"SELECT * FROM data_spt");
+$result = mysqli_query($koneksi,"SELECT * FROM data_spt");
+var_dump($result);
 
  ?>
  
