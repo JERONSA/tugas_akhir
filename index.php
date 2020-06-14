@@ -44,10 +44,14 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
  	<th>Variation</th>
  	<th>Pembayaran</th>
  </tr>
+
+ <?php $i = 1; ?>
 	<?php while ($baris = mysqli_fetch_assoc($result)) :?>
 
  <tr>
- 	<td><?=$baris['id'] ?></td>
+ 	<!-- <td><?=$baris['id'] ?></td> -->
+ 	<!-- bisa juga dipakai cara lain -->
+ 	<td><?= $i ?></td>
  	<td>
  	<a href="">ubah</a>
  	<a href="">hapus</a>
@@ -61,6 +65,7 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
  <td><?=$baris['variation'] ?></td>
  <td><?=$baris['pembayaran'] ?></td>
  </tr>
+ <?php $i++ ?>
 <?php endwhile; ?>
  	</table>
   </body>
