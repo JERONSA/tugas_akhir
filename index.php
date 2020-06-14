@@ -1,22 +1,7 @@
 <?php 
 require 'functions.php';
-//mengambil data dari tabel data_spt/query data sepatu
-//mysqli_query($koneksi,"SELECT * FROM data_spt");
-//membuat variabel baru untuk mengecek data nya sudah konek atau belum
-$result = mysqli_query($koneksi,"SELECT * FROM data_spt");
-//mengecek dengan var_dump
-//var_dump($result);
-//mengambil data (fetch) sepatu dari object result
-//mysqli_fetch_row(); mengembalikan array numerik
-//mysqli_fetch_assoc(); mengembalikan array asosiaativ
-//mysqli_fetch_array(); mengembalikan array numerik dan array assosiativ
-//mysqli_fetch_object(); mengambalikan sebuah objek
-
-//untuk menampilak semua data yang telah di entry di database menggunakan fungsi while
-// while ($spt = mysqli_fetch_assoc($result)){
-// var_dump($spt);
-// }
- ?>
+$sepatu = query("SELECT * FROM data_spt");
+?>
  <!DOCTYPE html>
  <html>
  <head>
@@ -37,27 +22,25 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
  </tr>
 
  <?php $i = 1; ?>
-	<?php while ($baris = mysqli_fetch_assoc($result)) :?>
+	<?php foreach($sepatu as $row) :?>
 
  <tr>
- 	<!-- <td><?=$baris['id'] ?></td> -->
- 	<!-- bisa juga dipakai cara lain -->
- 	<td><?= $i ?></td>
+ 	<td><?= $i; ?></td>
  	<td>
  	<a href="">ubah</a>
  	<a href="">hapus</a>
  </td>
  <td>
- 	<img src="img/<?=$baris['gambar'] ?>" width="50">
+ 	<img src="img/<?=$row['gambar']; ?>" width="50">
  </td>
- <td><?=$baris['merk'] ?></td>
- <td><?=$baris['harga'] ?></td>
- <td><?=$baris['pengiriman'] ?></td>
- <td><?=$baris['variation'] ?></td>
- <td><?=$baris['pembayaran'] ?></td>
+ <td><?=$row['merk']; ?></td>
+ <td><?=$row['harga']; ?></td>
+ <td><?=$row['pengiriman']; ?></td>
+ <td><?=$row['variation']; ?></td>
+ <td><?=$row['pembayaran']; ?></td>
  </tr>
- <?php $i++ ?>
-<?php endwhile; ?>
+ <?php $i++; ?>
+<?php endforeach; ?>
  	</table>
   </body>
  </html>
