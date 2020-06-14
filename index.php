@@ -1,3 +1,18 @@
+<?php 
+//cara pertama
+//melakukan koneksi ke database
+//mysqli_connect("localhost", "root", "", "sepatu");
+//mengambil data dari tabel data_spt/query data sepatu
+//mysqli_query("localhost", "root", "", "data_spt")
+//cara kedua
+//melakukan koneksi ke database
+$koneksi = mysqli_connect("localhost", "root", "", "sepatu");
+//mengambil data dari tabel data_spt/query data sepatu
+mysqli_query($koneksi,"SELECT * FROM data_spt");
+
+ ?>
+ 
+
 
  <!DOCTYPE html>
  <html>
