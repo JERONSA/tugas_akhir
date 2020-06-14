@@ -55,11 +55,11 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
  <td>
  	<img src="img/<?=$baris['gambar'] ?>" width="50">
  </td>
- <td>Jimmy Choo</td>
- <td>695.000</td>
- <td>Luar Negeri</td>
- <td>36,37,38,39,40</td>
- <td>Bisa COD</td>
+ <td><?=$baris['merk'] ?></td>
+ <td><?=$baris['harga'] ?></td>
+ <td><?=$baris['pengiriman'] ?></td>
+ <td><?=$baris['variation'] ?></td>
+ <td><?=$baris['pembayaran'] ?></td>
  </tr>
 <?php endwhile; ?>
  	</table>
