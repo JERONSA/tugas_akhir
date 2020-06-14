@@ -17,6 +17,13 @@
  	<th>Variation</th>
  	<th>Pembayaran</th>
  </tr>
+ <tr>
+ 	<td>1</td>
+ 	<td>
+ 	<a href="">ubah</a>
+ 	<a href="">hapus</a>
+ </td>
+ </tr>
  	</table>
   </body>
  </html>
