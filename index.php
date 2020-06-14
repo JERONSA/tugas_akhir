@@ -22,17 +22,10 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mysqli_fetch_object(); mengambalikan sebuah objek
 
 //untuk menampilak semua data yang telah di entry di database menggunakan fungsi while
-while ($spt = mysqli_fetch_assoc($result)){
-var_dump($spt);
-}
-
-
-
-
+// while ($spt = mysqli_fetch_assoc($result)){
+// var_dump($spt);
+// }
  ?>
- 
-
-
  <!DOCTYPE html>
  <html>
  <head>
@@ -51,6 +44,8 @@ var_dump($spt);
  	<th>Variation</th>
  	<th>Pembayaran</th>
  </tr>
+	<?php while ($baris = mysqli_fetch_assoc($result)) :?>
+
  <tr>
  	<td>1</td>
  	<td>
@@ -66,6 +61,7 @@ var_dump($spt);
  <td>36,37,38,39,40</td>
  <td>Bisa COD</td>
  </tr>
+<?php endwhile; ?>
  	</table>
   </body>
  </html>
