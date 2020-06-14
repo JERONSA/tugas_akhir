@@ -18,11 +18,11 @@ $result = mysqli_query($koneksi,"SELECT * FROM data_spt");
 //mengambil data (fetch) sepatu dari object result
 //mysqli_fetch_row(); mengembalikan array numerik
 //mysqli_fetch_assoc(); mengembalikan array asosiaativ
-//mysqli_fetch_array();
+//mysqli_fetch_array(); mengembalikan array numerik dan array assosiativ
 //mysqli_fetch_object();
 
 $spt = mysqli_fetch_array($result);
-var_dump($spt);
+var_dump($spt[1]);
 
 
 
