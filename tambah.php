@@ -17,16 +17,15 @@ if (isset($_POST["submit"])) {
 
 	$query = "INSERT INTO data_spt
 			VALUES 
-			('', '$merk', '$harga', '$pengiriman', '$variation', '$pembayaran', '$gambar' )
+			('', '$merk', '$harga', '$pengiriman', '$variation', '$pembayaran', '$gambar )
 
 			";
-			
+
 	mysqli_query ($koneksi, $query );
-
+//cek apakah data berhasil ditambahkan atau tidak
+	var_dump(mysqli_affected_rows($koneksi));
 }
-
-
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
