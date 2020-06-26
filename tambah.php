@@ -17,13 +17,19 @@ if (isset($_POST["submit"])) {
 
 	$query = "INSERT INTO data_spt
 			VALUES 
-			('', '$merk', '$harga', '$pengiriman', '$variation', '$pembayaran', '$gambar )
+			('', '$merk', '$harga', '$pengiriman', '$variation', '$pembayaran', '$gambar' )
 
 			";
 
 	mysqli_query ($koneksi, $query );
 //cek apakah data berhasil ditambahkan atau tidak
-	var_dump(mysqli_affected_rows($koneksi));
+	if(mysqli_affected_rows($koneksi) > 0){
+		echo "Data Berhasil Disimpan";
+	} else {
+		echo "Data Gagal Disimpan";
+		echo "<br>";
+		echo mysqli_error($koneksi);
+	}
 }
 ?>
 <!DOCTYPE html>
