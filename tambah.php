@@ -31,6 +31,11 @@
 				<label for="gambar">GAMBAR</label>
 				<input type="text" name="gambar" id="gambar">
 			</li>
+			<br>
+			<br>
+			<li>
+			<button type="submit" name="submit">SIMPAN</button>
+			</li>
 		</ul>
 	</form>
 
