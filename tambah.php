@@ -1,3 +1,32 @@
+<?php 
+//koneksi DBMS
+$koneksi = mysqli_connect("localhost", "root", "", "Sepatu");
+
+
+//cek apakah tombol submit sudah ditekaan atau belum?
+if (isset($_POST["submit"])) {
+	//ambil data dimasing-masing form/elemen
+	$merk = $_POST["merk"];
+	$harga = $_POST["harga"];
+	$pengiriman = $_POST["pengiriman"];
+	$variation = $_POST["variation"];
+	$pembayaran = $_POST["pembayaran"];
+	$gambar = $_POST["gambar"];
+
+	//query insert ke database
+
+	$query = "INSERT INTO data_spt
+			VALUES 
+			('', '$merk', '$harga', '$pengiriman', '$variation', '$pembayaran', '$gambar' )
+
+			";
+			
+	mysqli_query ($koneksi, $query );
+
+}
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
