@@ -11,6 +11,8 @@ $sepatu = query("SELECT * FROM data_spt");
  <body>
  <h1>Daftar Sepatu</h1>	
  <a href="tambah.php">Tambah Data Sepatu</a>
+ <br>
+ <br>
 
  <table border="1" cellpadding="10" cellspacing="0">
  <tr>
