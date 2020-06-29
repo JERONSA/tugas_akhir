@@ -34,7 +34,14 @@ function query($query) {
 
 	mysqli_query ($koneksi, $query );
 	return mysqli_affected_rows($koneksi);
-
 	}
+
+	function hapus($id) {
+		global $koneksi;
+		mysqli_query($koneksi, "DELETE FROM data_spt WHERE id = $id");
+
+		return mysqli_affected_rows($koneksi);
+	}
+
  ?>
 
