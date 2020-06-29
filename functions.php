@@ -17,12 +17,12 @@ function query($query) {
 	function tambah ($data)
 	{
 	global $koneksi;
-	$merk = $data["merk"];
-	$harga = $data["harga"];
-	$pengiriman = $data["pengiriman"];
-	$variation = $data["variation"];
-	$pembayaran = $data["pembayaran"];
-	$gambar = $data["gambar"];
+	$merk = htmlspecialchars($data["merk"]);
+	$harga = htmlspecialchars($data["harga"]);
+	$pengiriman = htmlspecialchars($data["pengiriman"]);
+	$variation = htmlspecialchars($data["variation"]);
+	$pembayaran = htmlspecialchars($data["pembayaran"]);
+	$gambar = htmlspecialchars($data["gambar"]);
 
 	//query insert ke database
 
