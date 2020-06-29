@@ -7,9 +7,19 @@ require "functions.php";
 if (isset($_POST["submit"])) {
 	//cek apakah data berhasil ditambahkan atau tidak
 	if (tambah($_POST) > 0) {
-		echo "Data BErhasil Ditambahkan";
+		echo "
+		<script>
+		alert('Data Berhasil Disimpan!');
+		document.location.href ='index.php';
+		</script>
+		";
 	} else {
-		echo "Data Gagal Ditambahkan";
+		echo "
+		<script>
+		alert('Data Gagal Disimpan!');
+		document.location.href ='index.php';
+		</script>
+		";
 	}
 }
 ?>
@@ -24,27 +34,27 @@ if (isset($_POST["submit"])) {
 		<ul>
 			<li>
 				<label for="merk">MERK</label>
-				<input type="text" name="merk" id="merk">
+				<input type="text" name="merk" id="merk" required>
 			</li>
 			<li>
 				<label for="harga">HARGA</label>
-				<input type="text" name="harga" id="harga">
+				<input type="text" name="harga" id="harga" required>
 			</li>
 			<li>
 				<label for="pengiriman">PENGIRIMAN</label>
-				<input type="text" name="pengiriman" id="pengiriman">
+				<input type="text" name="pengiriman" id="pengiriman" required>
 			</li>
 			<li>
 				<label for="variation">VARIATION</label>
-				<input type="text" name="variation" id="variation">
+				<input type="text" name="variation" id="variation" required>
 			</li>
 			<li>
 				<label for="pembayaran">PEMBAYARAN</label>
-				<input type="text" name="pembayaran" id="pembayaran">
+				<input type="text" name="pembayaran" id="pembayaran" required>
 			</li>
 			<li>
 				<label for="gambar">GAMBAR</label>
-				<input type="text" name="gambar" id="gambar">
+				<input type="text" name="gambar" id="gambar" required >
 			</li>
 			<br>
 			<br>
