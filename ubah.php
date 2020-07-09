@@ -8,7 +8,7 @@ if(!isset($_SESSION["login"]))
  exit;
 }
 //koneksi DBMS
-require "functions.php";
+require 'functions.php';
 
 //ambil data di url
 $id = $_GET ["id"];
@@ -34,6 +34,7 @@ if (isset($_POST["submit"])) {
         </script>
         ";
     }
+}
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ if (isset($_POST["submit"])) {
             <div class="form-group">
             <label>Pengiriman </label>
             <select class="form-control" name="pengiriman">
-                <option ></option>
+                <option value="<?= $spt["pengiriman"]; ?>""></option>
                 <option value="surabaya">Surabaya</option>
                 <option value="jakarta">Jakarta</option>
                 <option value="bandung">Bandung</option>
@@ -73,7 +74,7 @@ if (isset($_POST["submit"])) {
             <div class="form-group">
             <label>Variation</label>
             <select class="form-control" name="variation">
-                <option></option>
+                <option value="<?= $spt["variation"]; ?>""></option>
                 <option value="36">36</option>
                 <option value="37">37</option>
                 <option value="38">38</option>
