@@ -28,8 +28,8 @@ if(isset($_POST["cari"]) ) {
  	<!-- <a href="logout.php">Logout</a> -->
  	
  	<div class="container">
- 	<a class="btn btn-info mt-3" href="tambah.php" role="button">Tambah Data</a>
- 	<a class="btn btn-info mt-3" href="logout.php" role="button">Keluar</a>
+ 	<a class="btn btn-info mt-3" href="tambah.php" >Tambah Data</a>
+ 	<a class="btn btn-info mt-3" href="logout.php" >Keluar</a>
  	
 	<!-- Awal Card Form -->
 	<div class="card mt-3">
@@ -79,9 +79,6 @@ if(isset($_POST["cari"]) ) {
 			 	 <link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
   </body>
  </html>
-}else{
-	header("Location: login.php");
-}
-?>
+
 
  

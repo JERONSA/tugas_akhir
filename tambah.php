@@ -7,6 +7,7 @@ if(!isset($_SESSION["login"]))
  header("Location: login.php");
  exit;
 }
+
 //koneksi DBMS
 require 'functions.php';
 
@@ -30,6 +31,7 @@ if (isset($_POST["submit"])) {
 		</script>
 		";
 	}
+}
 
 ?>
 <!DOCTYPE html>
@@ -91,10 +93,3 @@ if (isset($_POST["submit"])) {
 	<link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
 </body>
 </html>
-<?php
-}
-else
-{
-	header("Location: login.php");
-}
-?>

@@ -8,7 +8,7 @@ if(!isset($_SESSION["login"]))
  exit;
 }
 //koneksi DBMS
-require 'functions.php';
+require "functions.php";
 
 //ambil data di url
 $id = $_GET ["id"];
@@ -92,7 +92,7 @@ if (isset($_POST["submit"])) {
             </div>
             <div class="form-group">
             <label>Gambar</label>
-            <input type="text" name="gambar" class="form-control" id="harga" required value="<?= $spt["gambar"]; ?>">
+            <input type="text" name="gambar" class="form-control" id="gambar" required value="<?= $spt["gambar"]; ?>">
             </div>
              <button type="submit" class="btn btn-primary" name="submit">Ubah</button> 
             
@@ -103,11 +103,7 @@ if (isset($_POST["submit"])) {
     </div>
     <!-- Akhir Card Form -->
     </div>
+
     <link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
 </body>
 </html>
-<?php
-}else{
-	header('Location: login.php');
-}
-?>

@@ -7,7 +7,7 @@ if (isset($_POST["register"])) {
 		echo "<script>
   				alert('user baru berhasil ditambahkan');
   				</sript>";
-	}else {
+	} else {
 		echo mysqli_error($koneksi);
 	}
 }

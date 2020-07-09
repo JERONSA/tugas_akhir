@@ -26,11 +26,6 @@ if ( hapus($id) > 0 ) {
 		document.location.href ='index.php';
 		</script>
 		";
+	}
 
-}
-
-}else{
-	header('location: login.php');
-}
-?>
 
