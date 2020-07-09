@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
 		</script>
 		";
 	}
-}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -95,6 +95,6 @@ if (isset($_POST["submit"])) {
 }
 else
 {
-	header('Location: login.php');
+	header("Location: login.php");
 }
 ?>

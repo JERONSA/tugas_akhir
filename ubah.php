@@ -34,7 +34,7 @@ if (isset($_POST["submit"])) {
         </script>
         ";
     }
-}
+
 ?>
 <!DOCTYPE html>
 <html>
