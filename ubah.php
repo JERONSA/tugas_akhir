@@ -66,9 +66,9 @@ if (isset($_POST["submit"])) {
             <label>Pengiriman </label>
             <select class="form-control" name="pengiriman">
                 <option value="<?= $spt["pengiriman"]; ?>""></option>
-                <option value="surabaya">Surabaya</option>
-                <option value="jakarta">Jakarta</option>
-                <option value="bandung">Bandung</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Bandung">Bandung</option>
             </select>
             </div>
             <div class="form-group">
@@ -85,10 +85,10 @@ if (isset($_POST["submit"])) {
             <div class="form-group">
             <label>Pembayaran </label>
             <select class="form-control" name="pembayaran">
-                <option value="<?= $spt["pembayaran"]; ?>"><?= $spt["pembayaran"]; ?></option>
-                <option value="transfer">ATM BERSAMA</option>
-                <option value="kartu_kredit">Kartu Kredit</option>
-                <option value="cod">Bisa COD</option>
+                <option value="<?= $spt["pembayaran"]; ?>"></option>
+                <option value="ATM BERSAMA">ATM BERSAMA</option>
+                <option value="KARTU KREDIT">Kartu Kredit</option>
+                <option value="BISA COD">Bisa COD</option>
                 </select>
             </div>
             <div class="form-group">
