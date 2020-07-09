@@ -1,12 +1,21 @@
 <?php 
+
+session_start();
+
+if(!isset($_SESSION["login"])) 
+{
+ header("Location: login.php");
+ exit;
+}
 //koneksi DBMS
-require "functions.php";
+require 'functions.php';
 
 
 //cek apakah tombol submit sudah ditekaan atau belum?
 if (isset($_POST["submit"])) {
+
 	//cek apakah data berhasil ditambahkan atau tidak
-	if (tambah($_POST) > 0) {
+	if (tambah($_POST) > 0 ) {
 		echo "
 		<script>
 		alert('Data Berhasil Disimpan!');
@@ -26,44 +35,66 @@ if (isset($_POST["submit"])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Halaman Tambah Data</title>
+	<title>Katalog Sepatu Wanita Branded</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Tambah Data Sepatu</h1> 
-	<form action="" method= "POST">
-		<ul>
-			<li>
-				<label for="merk">MERK</label>
-				<input type="text" name="merk" id="merk" required>
-			</li>
-			<li>
-				<label for="harga">HARGA</label>
-				<input type="text" name="harga" id="harga" required>
-			</li>
-			<li>
-				<label for="pengiriman">PENGIRIMAN</label>
-				<input type="text" name="pengiriman" id="pengiriman" required>
-			</li>
-			<li>
-				<label for="variation">VARIATION</label>
-				<input type="text" name="variation" id="variation" required>
-			</li>
-			<li>
-				<label for="pembayaran">PEMBAYARAN</label>
-				<input type="text" name="pembayaran" id="pembayaran" required>
-			</li>
-			<li>
-				<label for="gambar">GAMBAR</label>
-				<input type="text" name="gambar" id="gambar" required >
-			</li>
-			<br>
-			<br>
-			<li>
-			<button type="submit" name="submit">SIMPAN</button>
-			</li>
-		</ul>
-	</form>
+	<div class="container">
 
-
+	<!-- Awal Card Form -->
+	<div class="card mt-3">
+	  <div class="card-header bg-primary text-white">
+	    Form Input Data Sepatu
+	  </div>
+	  <div class="card-body">
+	    <form method="post" action="" enctype="multipart/form-data">
+	    	<div class="form-group">
+	    	<label>Merk </label>
+	    	<input type="text" name="merk" class="form-control" id="merk" placeholder="Merk Sepatu" required>
+	    	</div>
+	    	<div class="form-group">
+	    	<label>Harga</label>
+	    	<input type="text" name="harga" class="form-control" id="harga" placeholder="Harga Sepatu" required>
+	    	</div>
+	    	<div class="form-group">
+	    	<label>Pengiriman </label>
+	    	<select class="form-control" name="pengiriman">
+	    		<option></option>
+	    		<option value="surabaya">Surabaya</option>
+	    		<option value="jakarta">Jakarta</option>
+	    		<option value="bandung">Bandung</option>
+	    	</select>
+	    	</div>
+	    	<div class="form-group">
+	    	<label>Variation</label>
+	    	<input type="text" name="variation" class="form-control" id="variation" placeholder="Nomor Sepatu" required>
+	    	</div>
+	    	<div class="form-group">
+	    	<label>Pembayaran </label>
+	    	<select class="form-control" name="pembayaran">
+	    		<option></option>
+	    		<option value="transfer">ATM BERSAMA</option>
+	    		<option value="kartu_kredit">Kartu Kredit</option>
+	    		<option value="cod">Bisa COD</option>
+	    		</select>
+	    	<div class="form-group">
+	    	<label>Gambar</label>
+	    	<input type="file" name="gambar" class="custom-file" id="gambar">
+	    	</div>
+	    	<button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+	    </div>
+			</form>
+	  </div>
+	</div>
+	<!-- Akhir Card Form -->
+	</div>
+	<link rel="stylesheet" type="text/css" href="js/bootstrap.min.js">
 </body>
 </html>
+<?php
+}
+else
+{
+	header('Location: login.php');
+}
+?>
