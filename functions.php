@@ -14,6 +14,7 @@ function query($query) {
 	return $rows;
 	}
 
+
 	function tambah ($data)
 	{
 	global $koneksi;
@@ -23,14 +24,8 @@ function query($query) {
 	$variation = htmlspecialchars($data["variation"]);
 	$pembayaran = htmlspecialchars($data["pembayaran"]);
 
-	//$gambar = htmlspecialchars($data["gambar"]);
-	//upload gambar
-	$gambar = upload();
-	if( !$gambar ) {
-		return false;
-	}
-
-	//query insert ke database
+	$gambar = htmlspecialchars($data["gambar"]);
+		//query insert ke database
 
 	$query = "INSERT INTO data_spt
 			VALUES 
@@ -42,55 +37,12 @@ function query($query) {
 	return mysqli_affected_rows($koneksi);
 	}
 
-
-	function upload () {
-		
-		$namaFile = $_FILES['gambar']['name'];
-		// $ukuranFile = $_FILES['gambar']['size'];
-		// $error = $_FILES['gambar']['error'];
-		// $tmpName = $_FILES['gambar']['tmp_name'];
-
-		// //cek apakah tidak ada gambar yang diupload
-		// if ($error === 4) {
-		// 	echo "<script>
-		// 			alert('pilih gambar dulu!');
-		// 			</script>";
-		// 		return false;
-		// }
-
-
-		//cek apakah file gambar yang diupload
-	// 	$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-	// 	$ekstensiGambar = explode('.', $namaFile);
-	// 	//$ekstensiGambar = $ekstensiGambar[1];
-	// 	$ekstensiGambar = end($ekstensiGambar);
-	// 	if( !in_array($ekstensiGambar, $ekstensiGambarValid ));
-	// 		echo "<script>
-	// 				alert('bukan gambar thu!');
-	// 				</script>";
-	// 				return false;
-	// }
-
-	
-//lolos pengecekan, gambar siap diupload
-	
-	// $namaFileBaru = uniqid();
-	// $namaFileBaru ='.';
-	// $namaFileBaru = $ekstensiGambar;
-
-	move_uploaded_file($namaFile);
-
-	return false;
-}
-
-
 	function hapus($id) {
 		global $koneksi;
 		mysqli_query($koneksi, "DELETE FROM data_spt WHERE id = $id");
 
 		return mysqli_affected_rows($koneksi);
-	
-}
+	}
 
 function ubah($data){
     global $koneksi;
@@ -136,10 +88,9 @@ function cari($keyword) {
 function registrasi($data) {
 	global $koneksi;
 
-	$username = strtolower(stripslashes($data["username"]));
-	$password = mysqli_real_escape_string($koneksi, $data["password"]);
-	$password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
-
+	$username = $data["username"];
+	$password = $data["password"];
+	$password2 = $data["password2"];
 
 	//cek username sudah ada atau belum
 	$result = mysqli_query($koneksi, "SELECT * FROM user WHERE username = '$username'");
@@ -148,7 +99,7 @@ function registrasi($data) {
 		echo "<script>
 				alert('username sudah terdaftar!')
 				</script>";
-				return false;
+			return false;
 	}
 
 
@@ -160,23 +111,11 @@ function registrasi($data) {
 			return false;
 	} 
 
-
 	//enkripsi password
-
-	$password = password_hash($password, PASSWORD_DEFAULT);
-
+	$password = md5($password);
 	// tambahkan user baru
 	mysqli_query($koneksi, "INSERT INTO user VALUES ('', '$username', '$password')");
-
-
 	return mysqli_affected_rows($koneksi);
-
-
 }
-
-
-
-
-
- ?>
+?>
 

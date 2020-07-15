@@ -11,8 +11,7 @@ if (isset($_POST["register"])) {
 		echo mysqli_error($koneksi);
 	}
 }
-
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +38,7 @@ if (isset($_POST["register"])) {
 	    	<input type="password" name="password" class="form-control" id="password">
 	    	</div>
 	    	<div class="form-group">
-	    	<label>konfirmasi Password  :</label>
+	    	<label>Konfirmasi Password  :</label>
 	    	<input type="password" name="password2" class="form-control" id="password2">
 	    	</div>
 	    	<button type="submit" class="btn btn-primary" name="register">Registrasi</button> 

@@ -1,10 +1,10 @@
 <?php 
-session_start();
+// session_start();
 
-if (isset($_SESSION["login"])) {
-	header("Location: index.php");
-exit;
-}
+// if (!isset($_SESSION["login"])) {
+// 	header("Location: index.php");
+// exit;
+// }
 
 require 'functions.php';
 
@@ -42,7 +42,7 @@ if (isset($_POST["login"])) {
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<?php if (isset($error)): ?>
-	    	<p style=""color: red; font-style: italic;>username/password salah</p>
+	    	<p style="color: red; font-style: italic;">username/password salah</p>
 	   <?php endif; ?>
 
 </head>
@@ -55,7 +55,7 @@ if (isset($_POST["login"])) {
 	    Halaman Login
 	    </div>
 	  <div class="card-body">
-	    <form method="POST" action=" login.php " enctype="multipart/form-data">
+	    <form method="POST" action="" enctype="multipart/form-data">
 	    	<div class="form-group">
 	    	<label>Username </label>
 	    	<input type="text" name="username" class="form-control" id="username">

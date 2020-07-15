@@ -1,12 +1,11 @@
 <?php 
 
-session_start();
+// session_start();
 
-if(!isset($_SESSION["login"])) 
-{
- header("Location: login.php");
- exit;
-}
+// if(!isset($_SESSION["login"])) {
+//  header("Location: login.php");
+//  exit;
+// }
 
 //koneksi DBMS
 require 'functions.php';
@@ -52,11 +51,11 @@ if (isset($_POST["submit"])) {
 	    <form method="post" action="" enctype="multipart/form-data">
 	    	<div class="form-group">
 	    	<label>Merk </label>
-	    	<input type="text" name="merk" class="form-control" id="merk" placeholder="Merk Sepatu" required>
+	    	<input type="text" name="merk" class="form-control" id="merk" required>
 	    	</div>
 	    	<div class="form-group">
 	    	<label>Harga</label>
-	    	<input type="text" name="harga" class="form-control" id="harga" placeholder="Harga Sepatu" required>
+	    	<input type="text" name="harga" class="form-control" id="harga" required>
 	    	</div>
 	    	<div class="form-group">
 	    	<label>Pengiriman </label>
@@ -69,19 +68,19 @@ if (isset($_POST["submit"])) {
 	    	</div>
 	    	<div class="form-group">
 	    	<label>Variation</label>
-	    	<input type="text" name="variation" class="form-control" id="variation" placeholder="Nomor Sepatu" required>
+	    	<input type="text" name="variation" class="form-control" id="variation" required>
 	    	</div>
 	    	<div class="form-group">
 	    	<label>Pembayaran </label>
 	    	<select class="form-control" name="pembayaran">
 	    		<option></option>
 	    		<option value="transfer">ATM BERSAMA</option>
-	    		<option value="kartu_kredit">Kartu Kredit</option>
-	    		<option value="cod">Bisa COD</option>
+	    		<option value="kartu_kredit">KARTU KREDIT</option>
+	    		<option value="cod">BISA COD</option>
 	    		</select>
 	    	<div class="form-group">
 	    	<label>Gambar</label>
-	    	<input type="file" name="gambar" class="custom-file" id="gambar">
+	    	<input type="text" name="gambar" class="form-control" id="gambar">
 	    	</div>
 	    	<button type="submit" class="btn btn-primary" name="submit">Simpan</button>
 	    </div>

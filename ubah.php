@@ -1,12 +1,11 @@
 <?php 
 
-session_start();
+// session_start();
 
-if(!isset($_SESSION["login"])) 
-{
- header("Location: login.php");
- exit;
-}
+// if(!isset($_SESSION["login"])) {
+//  header("Location: login.php");
+//  exit;
+// }
 //koneksi DBMS
 require 'functions.php';
 
@@ -65,7 +64,7 @@ if (isset($_POST["submit"])) {
             <div class="form-group">
             <label>Pengiriman </label>
             <select class="form-control" name="pengiriman">
-                <option value="<?= $spt["pengiriman"]; ?>""></option>
+                <option value="<?= $spt["pengiriman"]; ?>"></option>
                 <option value="Surabaya">Surabaya</option>
                 <option value="Jakarta">Jakarta</option>
                 <option value="Bandung">Bandung</option>
@@ -74,7 +73,7 @@ if (isset($_POST["submit"])) {
             <div class="form-group">
             <label>Variation</label>
             <select class="form-control" name="variation">
-                <option value="<?= $spt["variation"]; ?>""></option>
+                <option value="<?= $spt["variation"]; ?>"></option>
                 <option value="36">36</option>
                 <option value="37">37</option>
                 <option value="38">38</option>
